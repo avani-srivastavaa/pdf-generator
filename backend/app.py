@@ -16,7 +16,7 @@ app.config.update(
     SESSION_COOKIE_SECURE=False       # Set to True in production over HTTPS
 )
 
-CORS(app, supports_credentials=True, origins=["https://your-frontend.onrender.com"])
+CORS(app, supports_credentials=True, origins=["https://pdf-generator-frontend.onrender.com"])
 
 @app.route('/login', methods=['POST'])
 def login():
