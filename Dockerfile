@@ -12,14 +12,14 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Copy files
+# Copy project files
 COPY . .
 
-# Install Python packages
-RUN pip install --no-cache-dir -r requirements.txt
+# Install Python dependencies
+RUN pip install --no-cache-dir -r backend/requirements.txt
 
-# Expose port
+# Expose Flask port
 EXPOSE 5000
 
-# Run the app
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+# Run the Flask app via gunicorn inside backend/
+CMD ["gunicorn", "--chdir", "backend", "--bind", "0.0.0.0:5000", "app:app"]
