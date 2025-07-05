@@ -2,13 +2,22 @@ services:
   - type: web
     name: backend
     env: docker
-    plan: free
+    repo: https://github.com/avani-srivastavaa/pdf-generator
+    branch: main
     dockerfilePath: backend/Dockerfile
+    buildFilter:
+      paths:
+        - backend/**
     autoDeploy: true
 
-  - type: static
+  - type: web
     name: frontend
     env: static
-    buildCommand: npm install && npm run build
-    staticPublishPath: build
-    workingDir: frontend
+    repo: https://github.com/avani-srivastavaa/pdf-generator
+    branch: main
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/build
+    buildFilter:
+      paths:
+        - frontend/**
+    autoDeploy: true
