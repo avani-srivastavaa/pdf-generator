@@ -1,0 +1,7 @@
+Flask
+pdfkit
+Werkzeug
+Jinja2
+flask-cors
+gunicorn
+wkhtmltopdf

@@ -1,0 +1,26 @@
+# React build files
+frontend/build/
+frontend/node_modules/
+frontend/.env
+
+# Python & Flask
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.db
+instance/
+.env
+venv/
+.env.*
+
+# VSCode & system files
+.vscode/
+.DS_Store
+
+# PDF output
+backend/generated/
+
+# Docker
+*.pid

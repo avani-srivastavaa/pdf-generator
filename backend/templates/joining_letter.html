@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Joining Letter</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      width: 21cm;
+      height: 29.7cm;
+      margin: 0;
+      padding: 100px 80px;
+      background-image: url("file:///{{ data.os_path }}/static/images/background.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      color: white;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .logo img {
+      width: 160px;
+    }
+
+    .company-name {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+
+    .company-name .purple {
+      color: #a993ff;
+    }
+
+    .company-description {
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .header {
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    .header p {
+      margin: 4px 0;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    .signature {
+      margin-top: 60px;
+    }
+
+    .signature img {
+      width: 150px;
+    }
+
+    .footer-note {
+      font-size: 13px;
+      margin-top: 40px;
+      text-align: center;
+      line-height: 1.5;
+      color: #cccccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="file:///{{ data.os_path }}/static/images/logo.jpg" alt="Logo" />
+  </div>
+
+  <div class="company-name">
+    <span class="purple">PURPLERAIN</span> TECHSAFE
+  </div>
+
+  <div class="company-description">
+    Cybersecurity • Information Security • Threat Intelligence<br>
+    Karnataka, India | https://www.purplerain.tech | hello@purplerain.tech
+  </div>
+
+  <div class="header">
+  <p><strong>To:</strong> <span style="font-weight: 600; font-size: 16px;">{{ data.name }}</span></p>
+  <p><strong>Date:</strong> {{ data.date }}</p>
+</div>
+  <div class="content">
+    <p>I hope this joining letter finds you well! It is with great pleasure that I welcome you to the PurpleRain TechSafe family as our new <strong>{{ data.position }}</strong>.</p>
+
+    <p>We're absolutely thrilled to have someone with your expertise on board, and I'm confident that you'll bring a fresh perspective to our growing team. The roles and responsibilities assigned to you include <strong>{{ data.role }}</strong>.</p>
+
+    <p>You'll be joining a group of passionate, driven individuals who are committed to making an impact in the cybersecurity world. And of course, feel free to bring your unique flair to everything you do—we're all about creating a dynamic and supportive environment here!</p>
+
+    <p>Once again, welcome aboard! We're excited to have you with us and can't wait to see all the incredible things we will achieve together.</p>
+
+    <p>Please don't hesitate to reach out if you need anything.</p>
+  </div>
+
+  <div class="signature">
+    <img src="file:///{{ data.os_path }}/static/images/signature.png" alt="Signature" />
+    <p style="font-weight: 600; font-size: 16px;">Yash Kulkarni</p>
+    <p>CEO & Founder<br>PurpleRain TechSafe</p>
+  </div>
+
+  <div class="footer-note">
+    Making enterprise-grade cybersecurity affordable and accessible<br>
+    hello@purplerain.tech | https://www.purplerain.tech/<br>
+    Founded 2024 • Karnataka, India • Bootstrapped & Growing
+  </div>
+
+</body>
+</html>

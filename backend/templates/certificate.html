@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Certificate</title>
+  <style>
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      width: 29.7cm;
+      height: 21cm;
+      background-image: url("file:///{{ data.os_path }}/static/images/bg.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+    }
+    .container {
+      padding: 60px 80px;
+      text-align: center;
+    }
+    .logo {
+      width: 200px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 30px;
+      letter-spacing: 2px;
+      margin: 20px 0;
+    }
+    h2 {
+      font-size: 26px;
+      margin: 10px 0;
+    }
+    .description {
+      font-size: 16px;
+      margin: 20px auto;
+      max-width: 80%;
+    }
+    .footer {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+    }
+    .signature-section {
+      text-align: left;
+    }
+    .signature {
+      width: 180px;
+    }
+    .qr-section {
+      display: flex;
+      justify-content: center;
+    }
+    .qr {
+      width: 100px;
+    }
+    .date-section {
+      text-align: right;
+      font-size: 14px;
+    }
+    .contact {
+      font-size: 14px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="file:///{{ data.os_path }}/static/images/logo.jpg" class="logo" />
+    <h1>CERTIFICATE OF INTERNSHIP</h1>
+    <p>This certificate is presented to:</p>
+    <h2>{{ data.name }}</h2>
+    <div class="description">
+      <p>
+        For successfully completing 3 Months of Internship as <strong>{{ data.position }}</strong>
+        with dedication and valuable contributions as a key in shaping the team culture and helping us grow.
+        We appreciate your efforts and wish you success in your future endeavours.
+      </p>
+    </div>
+
+    <div class="footer">
+      <div class="signature-section">
+        <img src="file:///{{ data.os_path }}/static/images/signatures.png" class="signature" />
+      </div>
+      <div class="qr-section">
+        <img src="file:///{{ data.os_path }}/static/images/qr.png" class="qr" />
+      </div>
+      <div class="date-section">
+        <p><strong>From:</strong> {{ data.from_date }}</p>
+        <p><strong>To:</strong> {{ data.to_date }}</p>
+      </div>
+    </div>
+
+    <div class="contact">
+      <p>purplerain.studio08@gmail.com<br>PurpleRain.framer.ai</p>
+    </div>
+  </div>
+</body>
+</html>

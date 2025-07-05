@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Letter of Appreciation</title>
+  <style>
+    @page {
+  size: A4;
+  margin: 0;
+}
+    body {
+  width: 21cm;
+  height: 29.7cm;
+  margin: 0;
+  padding: 100px 80px;
+  background-image: url("file:///{{ data.os_path }}/static/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: white;
+}
+
+
+    h1 {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .date {
+      text-align: right;
+      margin-bottom: 40px;
+      font-size: 14px;
+    }
+
+    .content {
+      max-width: 100%;
+    }
+
+    .footer {
+      margin-top: 60px;
+    }
+
+    .signature {
+      margin-top: 40px;
+    }
+
+    .signature img {
+      width: 150px;
+    }
+
+    .name {
+      font-weight: bold;
+    }
+
+    .purple {
+      color: #a993ff;
+      font-weight: 700;
+    }
+
+    .footer-note {
+      font-size: 13px;
+      margin-top: 40px;
+      text-align: center;
+      line-height: 1.5;
+      color: #cccccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1><span class="purple">PURPLERAIN</span> TECHSAFE</h1>
+  <p>Cybersecurity • Information Security • Threat Intelligence<br>
+     Karnataka, India | https://www.purplerain.tech | hello@purplerain.tech</p>
+
+  <div class="date">
+    Date: {{ data.date }}
+  </div>
+
+  <div class="content">
+    <p>Dear <span style="font-weight: 600;">{{ data.name }}</span>,</p>
+    <p><strong>Subject:</strong> Letter of Appreciation for <span style="font-weight: 600;">{{ data.name }}</span></p>
+
+
+    <p>On behalf of the entire team at PurpleRain TechSafe, I would like to express our sincere appreciation for your outstanding contributions as our {{ data.position }}.</p>
+
+    <p>Your exceptional work and dedication have been instrumental in our mission. We want to acknowledge:</p>
+
+    <p>Your success and achievement in our organization. With all your hard work and dedication towards the work, you have proved that you have all the capabilities to handle big projects. Your abilities to motivate others has played an important role in the team and has resulted in a significant increase in the productivity of the team assigned to you. You have excellent communication skills and are extremely organized. You went well beyond our expectations.</p>
+
+    <p>Your commitment to excellence and collaborative approach have enhanced our security capabilities and strengthened our team culture.</p>
+
+    <p>At PurpleRain TechSafe, we value team members who bring both technical expertise and genuine passion for cybersecurity, and you have exemplified both qualities.</p>
+
+    <p>Thank you for your dedication and professionalism. We are grateful to have you as part of the PurpleRain TechSafe family.</p>
+  </div>
+
+  <div class="signature">
+    <img src="file:///{{ data.os_path }}/static/images/signature.png" alt="Signature" />
+    <p style="font-weight: 600; font-size: 16px;">Yash Kulkarni</p>
+    <p>CEO & Founder<br>PurpleRain TechSafe</p>
+
+  </div>
+
+  <div class="footer-note">
+    Making enterprise-grade cybersecurity affordable and accessible<br>
+    hello@purplerain.tech | https://www.purplerain.tech/<br>
+    Founded 2024 • Karnataka, India • Bootstrapped & Growing
+  </div>
+
+</body>
+</html>

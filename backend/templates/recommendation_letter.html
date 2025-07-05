@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Recommendation Letter</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    body {
+      width: 21cm;
+      height: 29.7cm;
+      margin: 0;
+      padding: 100px 80px;
+      background-image: url("file:///{{ data.os_path }}/static/images/background.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      color: white;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .header {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .header .purple {
+      color: #a993ff;
+      font-weight: 700;
+    }
+    .subtext {
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+    .date {
+      text-align: right;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    .content {
+      max-width: 100%;
+    }
+    .signature {
+      margin-top: 60px;
+    }
+    .signature img {
+      width: 150px;
+    }
+    .footer-note {
+      font-size: 13px;
+      margin-top: 40px;
+      text-align: center;
+      line-height: 1.5;
+      color: #cccccc;
+    }
+    .bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1><span class="purple">PURPLERAIN</span> TECHSAFE</h1>
+    <p class="subtext">Cybersecurity • Information Security • Threat Intelligence<br>
+      Karnataka, India | https://www.purplerain.tech | hello@purplerain.tech</p>
+  </div>
+
+  <div class="date">
+    Date: {{ data.date }}
+  </div>
+
+  <p><strong>Letter to:</strong><br>
+  {{ data.name }}<br>
+  {{ data.position }} Intern,<br>
+  PurpleRain TechSafe<br>
+  Bangalore - 560002, India.
+  </p>
+
+  <div class="content">
+    <p><strong>To Whom It May Concern:</strong></p>
+
+    <p>I am pleased to write this recommendation for <strong>{{ data.name }}</strong>, has worked as a <strong>{{ data.position }}</strong> Intern at PURPLERAIN TECHSAFE. Throughout their internship, they demonstrated an exceptional work ethic, strong interpersonal skills, and a deep understanding of practices.</p>
+
+    <p>The candidate also quickly adapted to the dynamic nature of their respective department and contributed to several ongoing projects. Their ability to handle sensitive tasks with professionalism and discretion, while ensuring efficiency, was highly impressive. Furthermore, they consistently showed initiative by proposing ideas to the team.</p>
+
+    <p>In addition to their technical skills, this candidate has strong communication abilities and worked effectively both independently and as part of a team. Their positive attitude, attention to detail, and willingness to learn made them an invaluable asset to our team.</p>
+
+    <p>I have no doubt that this candidate can excel in any future endeavors and strongly recommend them for any related opportunities. They are a highly motivated and capable individual, and I am confident they will make a significant impact wherever they go.</p>
+  </div>
+
+  <div class="signature">
+    <img src="file:///{{ data.os_path }}/static/images/signature.png" alt="Signature" />
+    <p><strong>Yash Kulkarni</strong><br>CEO & Founder<br>PurpleRain TechSafe</p>
+  </div>
+
+  <div class="footer-note">
+    Making enterprise-grade cybersecurity affordable and accessible<br>
+    hello@purplerain.tech | https://www.purplerain.tech/<br>
+    Founded 2024 • Karnataka, India • Bootstrapped & Growing
+  </div>
+
+</body>
+</html>

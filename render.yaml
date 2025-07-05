@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: backend
+    env: docker
+    plan: free
+    dockerfilePath: backend/Dockerfile
+    autoDeploy: true
+
+  - type: static
+    name: frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    workingDir: frontend
