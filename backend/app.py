@@ -18,6 +18,9 @@ CORS(app, supports_credentials=True, origins=[
     "http://localhost:3000", 
     "https://pdf-generator-frontend.onrender.com"
     ])
+@app.route('/')
+def home():
+    return "PDF Generator backend is running!"
 
 @app.route('/test')
 def test():
