@@ -16,7 +16,7 @@ app.config.from_object(Config)
 
 CORS(app, supports_credentials=True, origins=[
     "http://localhost:3000", 
-    "https://pdf-generator-frontend.onrender.com/"
+    "https://pdf-generator-frontend.onrender.com"
     ])
 @app.route('/')
 def home():
