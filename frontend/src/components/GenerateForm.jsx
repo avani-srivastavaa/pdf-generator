@@ -9,6 +9,7 @@ function GenerateForm() {
   position: "",
   role: "",
   from_date: "",
+  to_date: "",
   duration: "",  
   type: "certificate"
 });
