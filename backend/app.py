@@ -19,6 +19,10 @@ CORS(app, supports_credentials=True, origins=[
     "https://pdf-generator-frontend.onrender.com"
     ])
 
+@app.route('/test')
+def test():
+    return jsonify({"status": "ok"})
+
 @app.route('/login', methods=['POST'])
 def login():
     data = request.json
