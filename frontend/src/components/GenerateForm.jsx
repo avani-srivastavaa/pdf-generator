@@ -9,7 +9,7 @@ function GenerateForm() {
   position: "",
   role: "",
   from_date: "",
-  to_date: "",  
+  duration: "",  
   type: "certificate"
 });
 
@@ -69,9 +69,8 @@ function GenerateForm() {
       <input name="name" placeholder="Name" onChange={handleChange} />
       <input name="position" placeholder="Position" onChange={handleChange} />
       <input name="role" placeholder="Role" onChange={handleChange} />
-{/*       <input name="duration" placeholder="Duration (eg. 3 Months)" onChange={handleChange} /> */}
-      <input name="from_date" type="Date" onChange={handleChange} />
-      <input name="to_date" type="date" onChange={handleChange} />
+      <input name="duration" placeholder="Duration (eg. 3 Months)" onChange={handleChange} />
+      <input name="date" placeholder="Date" onChange={handleChange} />
       <button onClick={handleGenerate}>Generate</button>
     </div>
   );
