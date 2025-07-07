@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-# Install system dependencies for wkhtmltopdf
+# Install system dependencies and fonts required by wkhtmltopdf
 RUN apt-get update && apt-get install -y \
     build-essential \
     libxrender1 \
@@ -12,28 +12,27 @@ RUN apt-get update && apt-get install -y \
     xfonts-75dpi \
     xfonts-base \
     wget \
+    gnupg \
+    fontconfig \
     && apt-get clean
 
-# Manually install wkhtmltopdf (since `apt-get install wkhtmltopdf` on slim image installs an incomplete version)
-RUN apt-get update && \
-    apt-get install -y wget gnupg fontconfig xfonts-75dpi xfonts-base libjpeg-turbo8 && \
-    wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb && \
+# Manually install full version of wkhtmltopdf (binary .deb)
+RUN wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb && \
     dpkg -i wkhtmltox_0.12.6-1.buster_amd64.deb || true && \
     apt-get install -y -f && \
-    rm wkhtmltox_0.12.6-1.buster_amd64.deb
-
+    rm -f wkhtmltox_0.12.6-1.buster_amd64.deb
 
 # Set working directory
 WORKDIR /app
 
-# Copy project files
+# Copy all project files into container
 COPY . .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r backend/requirements.txt
 
-# Expose Flask port
+# Expose Flask/Gunicorn port
 EXPOSE 5000
 
-# Run the Flask app with gunicorn
+# Start the Flask app using Gunicorn (from backend folder)
 CMD ["gunicorn", "--chdir", "backend", "--bind", "0.0.0.0:5000", "app:app"]
