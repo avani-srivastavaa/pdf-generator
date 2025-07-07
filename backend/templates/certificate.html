@@ -4,6 +4,16 @@
   <meta charset="utf-8">
   <title>Certificate</title>
   <style>
+    .uid-footer {
+      font-size: 12px;
+      margin-top: 30px;
+      text-align: center;
+      color: #ccc;
+    }
+    .uid-footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
     @page {
       size: A4 landscape;
       margin: 0;
@@ -21,6 +31,8 @@
       color: white;
     }
     .container {
+      height: 100%;
+      min-height: 1122px;
       padding: 60px 80px;
       text-align: center;
     }
@@ -80,10 +92,11 @@
     <h2>{{ data.name }}</h2>
     <div class="description">
       <p>
-        For successfully completing 3 Months of Internship as <strong>{{ data.position }}</strong>
+        For successfully completing <strong>{{ data.duration }}</strong> of Internship as <strong>{{ data.position }}</strong>
         with dedication and valuable contributions as a key in shaping the team culture and helping us grow.
         We appreciate your efforts and wish you success in your future endeavours.
       </p>
+      
     </div>
 
     <div class="footer">
@@ -97,6 +110,15 @@
         <p><strong>From:</strong> {{ data.from_date }}</p>
         <p><strong>To:</strong> {{ data.to_date }}</p>
       </div>
+      <div class="uid-footer">
+  <p>Certificate ID: {{ data.uid }}</p>
+  <p>Verify this certificate at:
+    <a href="https://pdf-generator.onrender.com/verify?uid={{ data.uid }}">
+      pdf-generator.onrender.com/verify
+    </a>
+  </p>
+</div>
+
     </div>
 
     <div class="contact">

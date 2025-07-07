@@ -1,0 +1,77 @@
+
+
+
+/* Apply background and full page layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #2b1055, #753a88);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Page wrapper to hold everything */
+.page-wrapper {
+  text-align: center;
+}
+
+/* Logo styles */
+.brand-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.brand-title span:first-child {
+  color: #BB6BD9;
+}
+.brand-title span:last-child {
+  color: #FFFFFF;
+}
+
+/* Form box styling */
+.form-container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  width: 100%;
+  max-width: 400px;
+}
+/* Inputs & buttons same as before */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #BB6BD9;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #A259FF;
+}

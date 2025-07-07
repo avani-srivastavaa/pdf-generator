@@ -4,6 +4,16 @@
   <meta charset="utf-8">
   <title>Joining Letter</title>
   <style>
+     .uid-footer {
+    font-size: 12px;
+    margin-top: 30px;
+    text-align: center;
+    color: #ccc;
+  }
+  .uid-footer a {
+    color: #fff;
+    text-decoration: underline;
+  }
     @page {
       size: A4;
       margin: 0;
@@ -123,6 +133,15 @@
     Making enterprise-grade cybersecurity affordable and accessible<br>
     hello@purplerain.tech | https://www.purplerain.tech/<br>
     Founded 2024 • Karnataka, India • Bootstrapped & Growing
+    <div class="uid-footer">
+  <p>Certificate ID: {{ data.uid }}</p>
+  <p>Verify this certificate at:
+    <a href="https://pdf-generator.onrender.com/verify?uid={{ data.uid }}">
+      pdf-generator.onrender.com/verify
+    </a>
+  </p>
+</div>
+
   </div>
 
 </body>

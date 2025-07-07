@@ -50,10 +50,14 @@ def render_pdf(data):
             "enable-local-file-access": "",
             "page-size": "A4",
             "margin-top": "0mm",
+            'margin-bottom': '0mm',
+            'margin-left': '0mm',
             "margin-right": "0mm",
-            "margin-bottom": "0mm",
-            "margin-left": "0mm"
+            'encoding': "UTF-8",
+            # 'disable-smart-shrinking': '',
+            'zoom': '1.3'
         }
     )
+
 
     return filename

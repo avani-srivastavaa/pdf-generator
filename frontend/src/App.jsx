@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import LoginForm from './components/LoginForm';
 import GenerateForm from './components/GenerateForm';
+import './components/FormStyles.css';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -10,3 +11,4 @@ function App() {
   );
 }
 export default App;
+

@@ -5,17 +5,16 @@ frontend/.env
 
 # Python & Flask
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
 *.log
 *.db
 instance/
 .env
-venv/
 .env.*
+venv/
+config.py  # if you ever write secrets directly here (optional)
 
-# VSCode & system files
+# Editor & system files
 .vscode/
 .DS_Store
 

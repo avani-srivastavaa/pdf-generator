@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Certificate Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f2d;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+    .card {
+      background: #1a1a3d;
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    h1 { color: #a259ff; }
+    p { font-size: 18px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Certificate Verified ✅</h1>
+    <p><strong>Name:</strong> {{ data.name }}</p>
+    <p><strong>Position:</strong> {{ data.position }}</p>
+    <p><strong>Certificate Type:</strong> {{ data.type }}</p>
+    <p><strong>Issued Date:</strong> {{ data.date }}</p>
+    <p><strong>Certificate ID:</strong> {{ data.uid }}</p>
+  </div>
+</body>
+</html>
