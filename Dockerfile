@@ -15,11 +15,13 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean
 
 # Manually install wkhtmltopdf (since `apt-get install wkhtmltopdf` on slim image installs an incomplete version)
-RUN apt-get update && apt-get install -y wget xfonts-75dpi xfonts-base fontconfig libjpeg-turbo8 \
-  && wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb \
-  && dpkg -i wkhtmltox_0.12.6-1.buster_amd64.deb || true \
-  && apt-get install -f -y \
-  && rm wkhtmltox_0.12.6-1.buster_amd64.deb
+RUN apt-get update && \
+    apt-get install -y wget gnupg fontconfig xfonts-75dpi xfonts-base libjpeg-turbo8 && \
+    wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb && \
+    dpkg -i wkhtmltox_0.12.6-1.buster_amd64.deb || true && \
+    apt-get install -y -f && \
+    rm wkhtmltox_0.12.6-1.buster_amd64.deb
+
 
 # Set working directory
 WORKDIR /app
