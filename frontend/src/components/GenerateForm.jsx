@@ -23,6 +23,7 @@ function GenerateForm() {
 
   const handleGenerate = async (e) => {
     e.preventDefault();
+    console.log("Generate clicked");
     const response = await axios.post(
   `${process.env.REACT_APP_API_URL}/generate`,
   formData,
