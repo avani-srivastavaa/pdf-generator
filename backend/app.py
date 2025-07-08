@@ -75,9 +75,8 @@ def generate():
         conn = get_connection()
         cur = conn.cursor()
         cur.execute("""
-            INSERT INTO certificates (uid, name, position, type, date)
-            VALUES (%s, %s, %s, %s, %s)
-        """, (uid, data['name'], data['position'], data['type'], data['date']))
+                    INSERT INTO certificates (uid, name, position, role, from_date, to_date, type, date)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)""", (uid,data['name'],data['position'],data['role'],data['from_date'],data['to_date'],data['type'],data['date']))
         conn.commit()
         cur.close()
         conn.close()
@@ -106,12 +105,15 @@ def verify_certificate():
 
     if result:
         data = {
-            "uid": result[1],
-            "name": result[2],
-            "position": result[3],
-            "type": result[4],
-            "date": result[5].strftime("%Y-%m-%d")
-        }
+            "uid": result[1],  # uid
+            "name": result[2],  # name
+            "position": result[3],  # position
+            "role": result[4],  # role
+            "from_date": result[5].strftime("%Y-%m-%d") if result[5] else None,
+            "to_date": result[6].strftime("%Y-%m-%d") if result[6] else None,
+            "type": result[7],
+            "date": result[8].strftime("%Y-%m-%d") if result[8] else None
+            }
         return render_template("verified.html", data=data)
     else:
         return "Certificate not found", 404
