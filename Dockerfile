@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Copy project files
+COPY backend backend
 COPY . .
 
 # Install Python packages
