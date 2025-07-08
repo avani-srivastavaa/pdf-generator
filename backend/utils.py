@@ -21,7 +21,7 @@ def render_pdf(data):
         raise FileNotFoundError(f"Template '{template_file}' not found: {e}")
 
     # Inject absolute path for local image references
-    data["os_path"] = base_dir.replace("\\", "/")  # ensure path works on Windows
+    # data["os_path"] = base_dir.replace("\\", "/")  # ensure path works on Windows
 
     print("Resolved background path:", f"{data['os_path']}/static/images/background.png")
 
