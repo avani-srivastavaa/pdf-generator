@@ -47,6 +47,7 @@ def generate():
         print("== RECEIVED DATA ==\n", data)
         uid = str(uuid.uuid4())
         data['uid'] = uid
+
         from_date = datetime.strptime(data['from_date'], '%Y-%m-%d')
         to_date = datetime.strptime(data['to_date'], '%Y-%m-%d')
         delta = relativedelta(to_date, from_date)
@@ -60,6 +61,7 @@ def generate():
             duration_parts.append(f"{delta.days} day{'s' if delta.days > 1 else ''}")
         data['duration'] = ", ".join(duration_parts) or " "
 
+        # Save to DB
         conn = get_connection()
         cur = conn.cursor()
         cur.execute("""
@@ -70,7 +72,7 @@ def generate():
         cur.close()
         conn.close()
 
-
+        # Render PDF using your actual function
         pdf_path = render_pdf(data)
         print("== PDF GENERATED AT ==\n", pdf_path)
 
@@ -79,6 +81,7 @@ def generate():
     except Exception as e:
         print("== ERROR OCCURRED IN /generate ==\n", e)
         return jsonify({"error": str(e)}), 500
+
 
 @app.route('/verify', methods=['GET'])
 def verify_certificate():
