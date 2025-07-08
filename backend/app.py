@@ -75,8 +75,8 @@ def generate():
         conn = get_connection()
         cur = conn.cursor()
         cur.execute("""
-                    INSERT INTO certificates (uid, name, position, role, from_date, to_date, type, date)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)""", (uid,data['name'],data['position'],data['role'],data['from_date'],data['to_date'],data['type'],data['date']))
+                    INSERT INTO certificates (from_date, to_date, uid, name, position, role, type, date)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)""", (data['from_date'],data['to_date'],uid,data['name'],data['position'],data['role'],data['type'],data['date']))
         conn.commit()
         cur.close()
         conn.close()
