@@ -29,4 +29,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Start the Flask app using Gunicorn
-CMD ["gunicorn", "--chdir", "backend", "--bind", "0.0.0.0:5000", "app:app"]
+CMD ["gunicorn", "--chdir", "backend", "--bind", "0.0.0.0:5000", "backend.app:app"]
