@@ -10,6 +10,7 @@ import os
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
 from config import Config
+import traceback
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -88,7 +89,8 @@ def generate():
         return send_file(pdf_path, as_attachment=True)
 
     except Exception as e:
-        print("== ERROR OCCURRED IN /generate ==\n", e)
+        print("== ERROR OCCURRED IN /generate ==")
+        traceback.print_exc()  # <== Shows full stack trace
         return jsonify({"error": str(e)}), 500
 
 
