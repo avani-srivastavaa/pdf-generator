@@ -112,7 +112,7 @@ def verify_certificate():
             "position": result[5],
             "role": result[6],
             "type": result[7],
-            "date": result[8].strftime("%Y-%m-%d") if result[8] else None,
+            "date": result[8] ,
             }
         return render_template("verified.html", data=data)
     else:
