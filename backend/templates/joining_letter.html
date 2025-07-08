@@ -4,16 +4,26 @@
   <meta charset="utf-8">
   <title>Joining Letter</title>
   <style>
-     .uid-footer {
-    font-size: 12px;
-    margin-top: 30px;
-    text-align: center;
-    color: #ccc;
-  }
-  .uid-footer a {
-    color: #fff;
-    text-decoration: underline;
-  }
+     .footer-container {
+  page-break-inside: avoid;
+  margin-top: 60px;
+  display: block;
+  width: 100%;
+}
+
+.uid-footer {
+  font-size: 12px;
+  margin-top: 30px;
+  text-align: center;
+  color: #ccc;
+  word-break: break-word;
+}
+
+.uid-footer a {
+  color: #fff;
+  text-decoration: underline;
+  word-break: break-all;
+}
     @page {
       size: A4;
       margin: 0;
