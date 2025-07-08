@@ -26,6 +26,10 @@ def home():
 def debug_db_url():
     return jsonify({"DATABASE_URL": os.getenv("DATABASE_URL")})
 
+@app.route('/healthz')
+def health_check():
+    return "OK", 200
+
 
 @app.route('/test')
 def test():
