@@ -92,6 +92,8 @@ def generate():
         traceback.print_exc()  # <== Shows full stack trace
         return jsonify({"error": str(e)}), 500
 
+def format_date(value):
+    return value.strftime("%Y-%m-%d") if hasattr(value, "strftime") else value
 
 @app.route('/verify', methods=['GET'])
 def verify_certificate():
@@ -105,14 +107,14 @@ def verify_certificate():
 
     if result:
         data = {
-            "from_date": result[0], 
-            "to_date": result[1],
-            "uid": result[2],
-            "name": result[3],
-            "position": result[4],
-            "role": result[5],
-            "type": result[6],
-            "date": result[7],
+            "uid": result[0],
+            "name": result[1],
+            "position": result[2],
+            "role": result[3],
+            "type": result[4],
+            "from_date": format_date(result[5]),
+            "to_date": format_date(result[6]),
+            "date": format_date(result[7])
             }
         return render_template("verified.html", data=data)
     else:
