@@ -105,14 +105,14 @@ def verify_certificate():
 
     if result:
         data = {
-            "uid": result[1],  # uid
-            "name": result[2],  # name
-            "position": result[3],  # position
-            "role": result[4],  # role
-            "from_date": result[5].strftime("%Y-%m-%d") if result[5] else None,
-            "to_date": result[6].strftime("%Y-%m-%d") if result[6] else None,
-            "type": result[7],
-            "date": result[8].strftime("%Y-%m-%d") if result[8] else None
+            "from_date": result[0].strftime("%Y-%m-%d") if result[0] else None,
+            "to_date": result[1].strftime("%Y-%m-%d") if result[1] else None,
+            "uid": result[2],
+            "name": result[3],
+            "position": result[4],
+            "role": result[5],
+            "type": result[6],
+            "date": result[7].strftime("%Y-%m-%d") if result[7] else None,
             }
         return render_template("verified.html", data=data)
     else:
