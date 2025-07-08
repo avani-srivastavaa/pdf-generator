@@ -23,9 +23,9 @@ CORS(app, supports_credentials=True, origins=[
 def home():
     return "PDF Generator backend is running!"
 
-# @app.route("/debug-db-url")
-# def debug_db_url():
-#     return jsonify({"DATABASE_URL": os.getenv("DATABASE_URL")})
+@app.route("/debug-db-url")
+def debug_db_url():
+    return jsonify({"DATABASE_URL": os.getenv("DATABASE_URL")})
 
 @app.route('/healthz')
 def health_check():
