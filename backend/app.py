@@ -31,6 +31,10 @@ def debug_db_url():
 def health_check():
     return "OK", 200
 
+@app.route('/api/health')
+def api_health():
+    return jsonify({"status": "ok"}), 200
+
 
 @app.route('/test')
 def test():
